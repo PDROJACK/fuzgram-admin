@@ -4,7 +4,6 @@ import { API_URL } from "../../app/constants";
 import { RootState } from "../../app/store";
 import { IsendAsyncIntegrationRequest } from "./userTypes";
 
-// Types
 type Link = {
   website: string;
   url: string;

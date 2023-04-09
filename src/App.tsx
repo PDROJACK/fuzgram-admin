@@ -15,8 +15,7 @@ import Nerd from "./fonts/bbt.TTF";
 const rootAdminRouter = createBrowserRouter([
   {
     path: "/",
-    // element: <ProtectedRoute children={<HomePage />} />,
-    element: <HomePage />
+    element: <ProtectedRoute children={<HomePage />} />,
   },
   {
     path: "/login",
