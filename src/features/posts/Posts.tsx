@@ -87,9 +87,6 @@ const Posts = () => {
     <Grid container justifyContent={"center"}>
       <Grid lg={8} md={10} sm={10} xs={12}>
         <ImageList cols={3}>
-          {/* <ImageListItem key="Subheader" cols={3}>
-                </ImageListItem> */}
-
           {postData.map((item) => (
             <ImageListItem
               key={item.thumbnail}

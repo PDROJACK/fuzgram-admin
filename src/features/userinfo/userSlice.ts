@@ -90,13 +90,6 @@ export const userSlice = createSlice({
   initialState,
 
   reducers: {
-    getProducts: (state, action: PayloadAction<string>) => {
-      // find product by movie id
-    },
-
-    addProduct: (state, action: PayloadAction<number>) => {
-      // Get Input about product and add it to DB
-    },
     toggleIntegration: (state, action: PayloadAction<number>) => {
       state.integrations[action.payload].enabled = !state.integrations[action.payload].enabled
     }
@@ -121,6 +114,6 @@ export const userSlice = createSlice({
 export const selectUser = (state: RootState) => state.user;
 export const selectIntegrations = (state: RootState) => state.user.integrations;
 
-export const { getProducts, addProduct, toggleIntegration } = userSlice.actions;
+export const { toggleIntegration } = userSlice.actions;
 
 export default userSlice.reducer;

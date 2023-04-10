@@ -48,21 +48,13 @@ export const postSlice = createSlice({
   reducers: {
     flipModal: (state) => {
       state.modal = !state.modal;
-    },
-
-    getProducts: (state, action: PayloadAction<string>) => {
-      // find product by movie id
-    },
-
-    addProduct: (state, action: PayloadAction<number>) => {
-      // Get Input about product and add it to DB
-    },
+    }
   },
 });
 
 export const selectPosts = (state: RootState) => state.post.posts;
 export const selectModal = (state: RootState) => state.post.modal;
 
-export const { getProducts, addProduct, flipModal } = postSlice.actions;
+export const { flipModal } = postSlice.actions;
 
 export default postSlice.reducer;
