@@ -4,7 +4,7 @@ import {
   selectIntegrations,
   selectUser,
   toggleIntegration,
-} from "../features/userinfo/userSlice";
+} from "../features/user/userSlice";
 import { useState } from "react";
 
 function Settings({ selectedIntegration, setSelectedIntegration }) {
@@ -43,13 +43,13 @@ function Settings({ selectedIntegration, setSelectedIntegration }) {
 
       <Grid>
         <Typography fontWeight={900}>Integration type:</Typography>
-        <Typography>{integration[selectedIntegration].social}</Typography>
+        <Typography>{integration[selectedIntegration].username}</Typography>
       </Grid>
 
       <Grid>
         <Typography fontWeight={900}>Integration since:</Typography>
         <Typography>
-          {integration[selectedIntegration].timestamp.toISOString()}
+          {/* {integration[selectedIntegration].toISOString()} */}
         </Typography>
       </Grid>
 

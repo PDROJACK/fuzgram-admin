@@ -7,15 +7,26 @@ import UserLoginSignUp from "./components/UserLoginSignUp";
 import Verification from "./screens/Verification";
 import HomePage from "./screens/Homepage";
 import AuthPage from "./screens/AuthPage";
-import { ThemeProvider } from "@emotion/react";
+// import { ThemeProvider } from "@emotion/react";
+import { ThemeProvider } from "@mui/material/styles"
 import { createTheme } from "@mui/material";
 // @ts-ignore
 import Nerd from "./fonts/bbt.TTF";
+import Integrations from "./screens/Integrations";
+import AccountSettings from "./screens/AccountSetttings";
 
 const rootAdminRouter = createBrowserRouter([
   {
     path: "/",
     element: <ProtectedRoute children={<HomePage />} />,
+  },
+  {
+    path: "/user/settings",
+    element: <ProtectedRoute children={<AccountSettings />} />,
+  },
+  {
+    path: "/user/:integration",
+    element: <ProtectedRoute children={<Integrations />} />,
   },
   {
     path: "/login",
@@ -36,9 +47,6 @@ const rootAdminRouter = createBrowserRouter([
 ]);
 
 const theme = createTheme({
-  typography: {
-    fontFamily: 'Nerd',
-  },
   components: {
     MuiCssBaseline: {
       styleOverrides: `

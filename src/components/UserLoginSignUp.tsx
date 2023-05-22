@@ -9,6 +9,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../app/firebasConfig";
 import FBLoginButton from "./FBLoginButton";
+import { useAppDispatch } from "../app/hooks";
+import { sendInitialStateRequest } from "../features/user/userSlice";
 
 const UserLoginSignUp = ({ type }) => {
   const [email, setEmail] = useState<string>();
@@ -16,6 +18,7 @@ const UserLoginSignUp = ({ type }) => {
   const [error, setError] = useState<string | null>(null);
 
   const navigator = useNavigate();
+  const dispatch = useAppDispatch();
 
   const signIn = () => {
     // Verify variables and Send Sign In request and save token in redux state
@@ -23,11 +26,17 @@ const UserLoginSignUp = ({ type }) => {
 
     if (type === "login") {
       signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
+        .then(async (userCredential) => {
+          
           // Signed in
           const user = userCredential.user;
+
           // ...
           console.log("Logged in");
+
+          const token  = await user.getIdToken()
+
+          dispatch(sendInitialStateRequest(token));
 
           navigator("/");
         })

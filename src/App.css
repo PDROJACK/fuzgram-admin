@@ -57,9 +57,3 @@ a:hover {
 a:active {
   text-decoration: underline;
 }
-
-/* FONTS */
-@font-face {
-  font-family: 'Nerd';
-  src: local('Nerd'), url(./fonts/BigBlue\ Terminal\ 437TT\ Nerd\ Font\ Complete.TTF) format('truetype');
-}

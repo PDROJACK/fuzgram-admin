@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { auth } from "../app/firebasConfig";
 import { useAppDispatch } from "../app/hooks";
-import { sendAsyncIntegrationRequest } from "../features/userinfo/userSlice";
+import { sendAsyncIntegrationRequest } from "../features/user/userSlice";
 
 function AuthPage() {
   const dispatch = useAppDispatch();
